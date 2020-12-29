@@ -16,7 +16,7 @@ namespace EjercicioTest
 			Assert.Pass();
 		}
 
-		[Test]
+		/*[Test]
 		public void TouchExecute()
 		{
 
@@ -78,6 +78,6 @@ namespace EjercicioTest
 
 			Assert.Pass();
 		}
-
+		*/
 	}
 }
