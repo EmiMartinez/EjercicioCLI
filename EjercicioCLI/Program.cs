@@ -24,7 +24,7 @@ namespace EjercicioCLI
 				client.GetDirectory();
 				client.Input = Console.ReadLine();
 	
-				// Tambien puede hacerse con algun dictionary....
+				// Tdictionary....
 				foreach (Expression exp in expressionList)
 				{
 					exp.Interpreter(client);
@@ -125,6 +125,7 @@ namespace EjercicioCLI
 				context.Output = this.Execute(context.GetArguments());
 				return;
 			}
+			context.Output = "Comando no reconocido.";
 
 		}
 
