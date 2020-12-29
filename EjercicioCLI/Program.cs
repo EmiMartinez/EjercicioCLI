@@ -10,12 +10,14 @@ namespace EjercicioCLI
 	{
 		static void Main()
 		{
+			//se agregan los commands disponibles
 			List<Expression> expressionList = new List<Expression>();
 			expressionList.Add(new Touch());
 			expressionList.Add(new Mv());
 			expressionList.Add(new Ls());
 			expressionList.Add(new Cd());
 			expressionList.Add(new Help());
+			expressionList.Add(new Exit());
 
 			Client client = new Client();
 			client.Welcome();
@@ -36,6 +38,8 @@ namespace EjercicioCLI
 			}
 		}
 	}
+
+
 
 	/// <summary>
 
@@ -125,7 +129,7 @@ namespace EjercicioCLI
 				context.Output = this.Execute(context.GetArguments());
 				return;
 			}
-			context.Output = "Comando no reconocido.";
+
 
 		}
 
@@ -307,6 +311,20 @@ namespace EjercicioCLI
 			Console.WriteLine("ls -R: Muestra el contenido de todos los subdirectorios de forma recursiva.");
 			Console.WriteLine("cd[path]: Permite navegar entre los diferentes directorios.");
 			Console.WriteLine("help[comando]: Permite ver un listado y que hace cada uno.");
+			return "";
+		}
+	}
+	class Exit : Expression
+	{
+		public override bool Check(string command)
+		{
+			if (command == "exit") return true; else return false;
+		}
+
+		internal override string Execute(string[] arguments)
+		{
+			//solo test
+			Environment.Exit(0);
 			return "";
 		}
 	}
