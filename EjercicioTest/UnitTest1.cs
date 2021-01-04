@@ -74,8 +74,13 @@ namespace EjercicioTest
 		[Test]
 		public void LsExecute()
 		{
+			Assert.AreEqual(commandLs.Execute(new string[] { " " }), "Proceso de directorios completado");
+		}
 
-			Assert.Pass();
+		[Test]
+		public void LsExecuteR()
+		{
+			Assert.AreEqual(commandLs.Execute(new string[] { "-r" }), "Proceso de directorios completado");
 		}
 
 		[Test]
@@ -91,8 +96,13 @@ namespace EjercicioTest
 		[Test]
 		public void CdExecute()
 		{
+			Assert.AreEqual(commandCd.Execute(new string[] { "C:/" }), "");		
+		}
 
-			Assert.Pass();
+		[Test]
+		public void CdExecuteNotFound()
+		{
+			Assert.AreEqual(commandCd.Execute(new string[] { "ñglkdfgñkl453534534" }), "El directorio especificada no existe.");
 		}
 
 		[Test]
