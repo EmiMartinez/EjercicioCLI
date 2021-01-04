@@ -25,7 +25,7 @@ namespace EjercicioCLI
 				client.GetDirectory();
 				client.Input = Console.ReadLine();
 	
-				// Tdictionary....
+				//tambien puedo usar Tdictionary....
 				foreach (Expression exp in expressionList)
 				{
 					exp.Interpreter(client);
