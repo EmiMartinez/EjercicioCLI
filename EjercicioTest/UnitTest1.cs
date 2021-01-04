@@ -102,6 +102,7 @@ namespace EjercicioTest
 		[Test]
 		public void CdExecuteNotFound()
 		{
+			//Agregar nuevo directorio para evitar fail
 			Assert.AreEqual(commandCd.Execute(new string[] { "ñglkdfgñkl453534534" }), "El directorio especificada no existe.");
 		}
 
@@ -114,7 +115,7 @@ namespace EjercicioTest
 		[Test]
 		public void HelpExecute()
 		{
-			Assert.IsFalse(commandHelp.Check("mv"));
+			Assert.AreEqual(commandHelp.Execute(new string[] { }), "");
 		}
 
 	}
