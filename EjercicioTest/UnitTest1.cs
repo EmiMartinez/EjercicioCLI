@@ -68,7 +68,7 @@ namespace EjercicioTest
 
 		public void LsNoCheck()
 		{
-			Assert.IsFalse(commantTouch.Check("mv"));
+			Assert.IsFalse(commandLs.Check("mv"));
 		}
 
 		[Test]
@@ -98,13 +98,13 @@ namespace EjercicioTest
 		[Test]
 		public void HelpCheck()
 		{
-			Assert.IsTrue(commandCd.Check("help"));
+			Assert.IsTrue(commandHelp.Check("help"));
 		}
 
 		[Test]
 		public void HelpExecute()
 		{
-			Assert.IsFalse(commandCd.Check("mv"));
+			Assert.IsFalse(commandHelp.Check("mv"));
 		}
 
 	}
